@@ -20,7 +20,9 @@ struct Stickers: Identifiable {
 }
 
 struct ContentView: View {
+//    @State var mode: EditMode = .inactive
     var body: some View {
+//        BookView().environment(\.editMode, mode)
         let barImage = Image("shadowImage")
         let showAnotherView: Bool = false
         GeometryReader { geometry in
@@ -63,7 +65,7 @@ struct AddNewBook: View {
                 .frame(height: 20)
         })
         .sheet(isPresented: $showAnotherView, content: {
-            AnotherView(textContent: "Hello World.")
+            AddBookView()
         })
     }
 }
@@ -78,6 +80,7 @@ fileprivate struct AnotherView: View {
 struct FirstList: View {
     @State var bookData = [Books(name: "①", Image: "book1"),
                            Books(name: "②", Image: "book1")]
+    @State var showAnotherView: Bool = false
     var body: some View {
         GeometryReader { geo in
             List(0..<bookData.count, id:\.self) { index in
@@ -86,7 +89,6 @@ struct FirstList: View {
                     .contentShape(Rectangle())
                     .listRowSeparator(.hidden)
                     .padding(.top, 20)
-                
             }
             .padding(.all, 10)
             .frame(width: geo.size.height, height: geo.size.width)
@@ -104,11 +106,13 @@ struct FirstList: View {
 
 struct FirstListData: View {
     @Binding var book: Books
+    @State var showAnotherView: Bool = false
     var body: some View {
         GeometryReader { geo in
             VStack() {
                 Image(book.Image)
                 Text(book.name)
+                Spacer()
             }
             .padding(.all, 10)
             .background(Color.white.opacity(0.3))
@@ -118,23 +122,35 @@ struct FirstListData: View {
             .rotationEffect(.degrees(90), anchor: .topTrailing)
             .transformEffect(.init(translationX: 0, y: geo.size.height))
             .scaleEffect(x: -1, y: 1)
+            //Cell全体をタップ領域に
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.showAnotherView = true
+            }
+            .sheet(isPresented: $showAnotherView, content: {
+                BookView()
+            })
         }
     }
 }
 
 struct AddNewSticker: View {
+    @State var showAnotherView: Bool = false
     var body: some View {
         Text("Stickers")
             .padding(.leading, 40)
             .multilineTextAlignment(.leading)
             .font(.system(size: 20, weight: .medium, design: .default))
         Button(action: {
-            print("")
+            self.showAnotherView = true
         }, label: {
             Image(systemName: "plus.circle")
                 .foregroundColor(.gray)
                 .padding(.leading, 16)
                 .frame(height: 20)
+        })
+        .sheet(isPresented: $showAnotherView, content: {
+            AddStickerView()
         })
     }
 }
