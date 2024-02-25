@@ -14,6 +14,10 @@
 		CE9ACC082B8A1EC8003BCE96 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC072B8A1EC8003BCE96 /* AddBookView.swift */; };
 		CE9ACC0A2B8A2175003BCE96 /* AddStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC092B8A2175003BCE96 /* AddStickerView.swift */; };
 		CE9ACC0C2B8A3026003BCE96 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC0B2B8A3026003BCE96 /* BookView.swift */; };
+		CE9ACC0E2B8ADFA6003BCE96 /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC0D2B8ADFA6003BCE96 /* StickerView.swift */; };
+		CE9ACC102B8AE684003BCE96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC0F2B8AE684003BCE96 /* HomeView.swift */; };
+		CE9ACC132B8AE810003BCE96 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC122B8AE810003BCE96 /* ProfileView.swift */; };
+		CE9ACC182B8B03E9003BCE96 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACC172B8B03E9003BCE96 /* DBService.swift */; };
 		CEA795A62B64EEBB0070070B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA795A52B64EEBB0070070B /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		CE9ACC072B8A1EC8003BCE96 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		CE9ACC092B8A2175003BCE96 /* AddStickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStickerView.swift; sourceTree = "<group>"; };
 		CE9ACC0B2B8A3026003BCE96 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		CE9ACC0D2B8ADFA6003BCE96 /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
+		CE9ACC0F2B8AE684003BCE96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE9ACC122B8AE810003BCE96 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CE9ACC172B8B03E9003BCE96 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		CEA795A52B64EEBB0070070B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,10 +69,10 @@
 			children = (
 				CE5CB71B2B606C0E00A45EED /* StickerAppApp.swift */,
 				CE5CB71D2B606C0E00A45EED /* ContentView.swift */,
-				CE9ACC0B2B8A3026003BCE96 /* BookView.swift */,
-				CE9ACC072B8A1EC8003BCE96 /* AddBookView.swift */,
-				CE9ACC092B8A2175003BCE96 /* AddStickerView.swift */,
+				CE9ACC172B8B03E9003BCE96 /* DBService.swift */,
+				CE9ACC112B8AE7ED003BCE96 /* Home */,
 				CEA795A52B64EEBB0070070B /* ViewModel.swift */,
+				CE9ACC142B8AE815003BCE96 /* Profile */,
 				CE5CB71F2B606C0F00A45EED /* Assets.xcassets */,
 				CE5CB7212B606C0F00A45EED /* Preview Content */,
 			);
@@ -77,6 +85,26 @@
 				CE5CB7222B606C0F00A45EED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE9ACC112B8AE7ED003BCE96 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE9ACC0F2B8AE684003BCE96 /* HomeView.swift */,
+				CE9ACC072B8A1EC8003BCE96 /* AddBookView.swift */,
+				CE9ACC0B2B8A3026003BCE96 /* BookView.swift */,
+				CE9ACC092B8A2175003BCE96 /* AddStickerView.swift */,
+				CE9ACC0D2B8ADFA6003BCE96 /* StickerView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE9ACC142B8AE815003BCE96 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE9ACC122B8AE810003BCE96 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5CB71E2B606C0E00A45EED /* ContentView.swift in Sources */,
+				CE9ACC182B8B03E9003BCE96 /* DBService.swift in Sources */,
+				CE9ACC132B8AE810003BCE96 /* ProfileView.swift in Sources */,
 				CEA795A62B64EEBB0070070B /* ViewModel.swift in Sources */,
 				CE9ACC0A2B8A2175003BCE96 /* AddStickerView.swift in Sources */,
 				CE9ACC0C2B8A3026003BCE96 /* BookView.swift in Sources */,
+				CE9ACC0E2B8ADFA6003BCE96 /* StickerView.swift in Sources */,
+				CE9ACC102B8AE684003BCE96 /* HomeView.swift in Sources */,
 				CE5CB71C2B606C0E00A45EED /* StickerAppApp.swift in Sources */,
 				CE9ACC082B8A1EC8003BCE96 /* AddBookView.swift in Sources */,
 			);

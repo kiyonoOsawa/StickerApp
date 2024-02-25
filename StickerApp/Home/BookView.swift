@@ -8,10 +8,24 @@
 import SwiftUI
 
 struct BookView: View {
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
-        VStack {
-            BookData()
-            Spacer()
+        NavigationView {
+            HStack {
+                VStack {
+                    BookData()
+                    Spacer()
+                }
+            }
+            .toolbar{
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("閉じる")
+                    }
+                }
+            }
         }
         .padding(.top, 100)
     }
